@@ -13,7 +13,7 @@
             "justMyCode": true,
             "cwd": "${workspaceFolder}/../work",
             "args": [
-                "-f", "${workspaceFolder}/../temp/ddi-20230215"
+                "${workspaceFolder}/../temp/head.txt"
             ]
         },
         {

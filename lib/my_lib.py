@@ -16,7 +16,7 @@ class MyLib(object):
     SECTION_SEPARATOR = re.compile('^==+$')
     COMMAND_NAME = re.compile('.*?===.*?')
 
-    def __init__(self, verbose = False, verbose2 = False) -> None:
+    def __init__(self, verbose, verbose2) -> None:
         self.verbose = verbose
         self.verbose2 = verbose2
 
@@ -28,7 +28,7 @@ class MyLib(object):
             return
         title = re.sub(' ', '-', title)     # ' ' -> '-'
         filename = title + '.txt'
-        if self.verbose2:
+        if self.verbose:
             print(f'filename={filename}')
         with open(filename, mode = 'w') as f:
             f.write(content)
@@ -69,3 +69,4 @@ class MyLib(object):
                     title = line
                 else:
                     content += line
+        self.write_file(title, content)

@@ -20,9 +20,10 @@ from conf.my_batch_conf import MyBatchConf
 
 # handle command line arguments.
 @click.command()
-@click.option('--filepath', '-f', required=True)
-@click.option('--optional_arg', '-o', default=None)
-def cmd(filepath, optional_arg):
+@click.argument('filepath')
+@click.option('--verbose', '-v', is_flag=True, default=False)
+@click.option('--verbose2', '-vv', is_flag=True, default=False)
+def cli(filepath, verbose, verbose2):
     # remove extention from this source filename and make it to program name(${prog_name})
     prog_name = os.path.splitext(os.path.basename(__file__))[0]
 
@@ -47,10 +48,11 @@ def cmd(filepath, optional_arg):
 
         # use command line arguments
         logger.info(f"filepath = {filepath}")
-        logger.info(f"optional_arg = {optional_arg}")
+        logger.info(f"verbose = {verbose}")
+        logger.info(f"verbose2 = {verbose2}")
 
         # call libraries
-        mylib = MyLib()
+        mylib = MyLib(verbose, verbose2)
         logger.info(mylib.get_name())
         mylib.read_file(filepath)
 
@@ -67,4 +69,4 @@ def cmd(filepath, optional_arg):
         sys.exit(1)
 
 if __name__ == '__main__':
-    cmd()
+    cli()
