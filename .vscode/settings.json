@@ -1,0 +1,7 @@
+{
+    "tws.trimOnSave": false,
+    "tws.highlightTrailingWhiteSpace": true,
+    "tws.highlightOnlyChangedLines": false,
+    "tws.debugLog": false,
+    "code-eol.color":"#FF0"
+}
