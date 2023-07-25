@@ -11,9 +11,9 @@
             "program": "${workspaceFolder}/bin/comware_split.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "cwd": "${workspaceFolder}/../work",
+//            "cwd": "${workspaceFolder}/../work",
             "args": [
-                "${workspaceFolder}/../temp/head.txt"
+                "/home/hotta-m/work/diag/display_diagnostic-information_infrastructure.log"
             ]
         },
         {

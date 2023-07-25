@@ -1,3 +1,4 @@
+# coding=utf8
 ''' pythonでバッチスクリプトを書くときの雛形 https://qiita.com/fetaro/items/77cb5571c472eac85031
 '''
 import logging
